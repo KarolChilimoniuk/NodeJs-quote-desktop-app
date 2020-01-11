@@ -1,0 +1,17 @@
+{
+  "name": "examapp",
+  "version": "1.0.0",
+  "description": "It's my exam console app",
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "lodash": "^4.17.15",
+    "yargs": "^15.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karol Chilimoniuk",
+  "license": "ISC"
+}
