@@ -1,27 +1,25 @@
-const argv = require("yargs").argv;
-const fs = require("fs");
-const data = require("./cytaty.json");
+const fs = require('fs');
+const colors = require("colors");
 
-const loadQuotes = command => {
-  switch (command) {
-    case "load quotes":
-      fs.readFile("cytaty.json", "utf-8", (err, quotes) => {
-        if (err) {
-          throw new Error("Błąd ładowania");
-        } else {
-          const parsedQuote = JSON.parse(quotes);
-          console.log("Zapisano");
-          parsedQuote.map((quote, i, array) => {
-            console.log(
-              `${array[i].id}. Cytat: "${array[i].sentence}", autor: ${array[i].author}, grupa cytatów: ${array[i].genre}`
-            );
-          });
-        }
+const loadQuotes = () => {
+  fs.readFile("quotes.json", "utf-8", (err, quotes) => {
+    if (err) {
+      throw new Error("Błąd ładowania");
+    } else {
+      const parsedQuote = JSON.parse(quotes);
+      parsedQuote.map((quote, i, array) => {
+        console.log(
+          `\nid: ${colors.cyan(array[i].id)}. \nQuote: "${colors.yellow(array[i].sentence)}", \nAuthor: ${colors.green(array[i].author)}, \ngenre: ${colors.blue(array[i].genre)}
+              `
+        );
       });
-      break;
-  }
+    }
+  });
 };
 
 module.exports = {
-  loadQuotesFunction: loadQuotes
+  command: "loadAll",
+  aliases: ["all"],
+  desc: "Load all quotes from json file.",
+  handler: loadQuotes
 }

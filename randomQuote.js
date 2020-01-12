@@ -1,24 +1,28 @@
-const argv = require("yargs").argv;
 const fs = require("fs");
-const data = require("./cytaty.json");
+const colors = require("colors");
 
-const randomQuote = command => {
-  switch (command) {
-    case "random quote":
-      const randomElement = data[Math.floor(Math.random() * data.length)];
-      randomElement.randomCallingCounter += 1;
-      console.log(
-        `id: ${randomElement.id}, \nCytat: ${randomElement.sentence}, \nautor: ${randomElement.author}, \ngrupa cytatów: ${randomElement.genre}, \nilość losowych wywołań cytatu do tej pory: ${randomElement.randomCallingCounter}`
-      );
-      fs.writeFile("cytaty.json", `${JSON.stringify(data)}`, err => {
-        if (err) {
-          throw new Error("Błąd zapisu");
-        }
-      });
-      break;
+const randomQuote = async () => {
+  let data = null;
+  try {
+    data = await require("./quotes.json");
+  } catch {
+    throw new Error(`JSON file not found`);
   }
+  const randomElement = await data[Math.floor(Math.random() * data.length)];
+  randomElement.randomCallingCounter += 1;
+  console.log(
+    `\nid: ${colors.cyan(randomElement.id)}, \nQuote: ${colors.yellow(randomElement.sentence)}, \nAuthor: ${colors.green(randomElement.author)}, \ngenre: ${colors.blue(randomElement.genre)}, \nrandom calling counter: ${colors.red(randomElement.randomCallingCounter)}`
+  );
+  fs.writeFile("quotes.json", `${JSON.stringify(data)}`, err => {
+    if (err) {
+      throw new Error("Can't be saved");
+    }
+  });
 };
 
 module.exports = {
-  randomFunction: randomQuote
+  command: "random",
+  aliases: ["r"],
+  desc: "Load random quote from json file",
+  handler: randomQuote
 };
