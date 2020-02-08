@@ -16,13 +16,3 @@ require('yargs')
   .command(randomQuoteCommand)
   .command(removeQuoteCommand)
   .help().argv;
-
-// appCommand.commandFunction(appCommand.command);
-// dataFile.createFile(appCommand.command);
-// externalDataQuote.externalDataFunction(appCommand.command);
-// addFunction.addFunction(appCommand.command);
-// loadQuotesFunction.loadQuotesFunction(appCommand.command);
-// loadQuote.loadQuoteFunction(appCommand.command);
-// randomQuote.randomFunction(appCommand.command);
-// removeQuote.removeFunction(appCommand.command);
-// help.helpFunction(appCommand.command);
