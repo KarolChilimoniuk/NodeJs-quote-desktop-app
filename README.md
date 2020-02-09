@@ -12,7 +12,7 @@ Hello World! I've got a pleasure to demonstrate my QuoteApp coded for my winter 
 ## Description
 * do below steps in your system console: 
 1. First of all, you have to clone my repo. 
-2. Next, enter the cloned folder where are app files.
+2. Next, enter the cloned folder where app files are included.
 3. Install node package manager modules necessary to correct work of app. Use command:
 ```
 npm install
