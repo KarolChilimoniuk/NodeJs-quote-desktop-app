@@ -31,3 +31,4 @@ In this app you can
 - load external quote (from external server).
 - remove quotes.
 
+*You can use aliases instead of whole commands. For example ``` node app.js ext``` instead of ```node app.js external```
