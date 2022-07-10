@@ -1,5 +1,5 @@
 ### Introduction 🌞
-Hello World! I've got a pleasure to demonstrate my QuoteApp coded for my winter semester NodeJsClass exam. This app is a database of quotes. You can add, load, remove quotes etc. All functionalities are demonstrated below.
+Hello World! I've got a pleasure to demonstrate my QuoteApp. This app is a "database" of quotes. You can add, load, remove quotes etc. All functionalities are demonstrated below.
 
 **
 ## Technologies and Tools 🏗
