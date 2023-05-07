@@ -4,7 +4,7 @@
   "description": "It's my exam console app",
   "main": "app.js",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.2",
     "colors": "^1.4.0",
     "lodash": "^4.17.15",
     "yargs": "^15.0.2"
